@@ -1,20 +1,21 @@
 <?php
 
-$destinatario = "gracesilvaduarte@outlook.es";
-
-$nombre = $_POST['nombre'];
-$tipo_tramite = $_POST['tipo_tramite'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$comments = $POST['comments'];
-
-$header = "Se ha recibido un mensaje desde la Página Colpilar Cúcuta";
-
-$mensajecompleto = $comments." \n Atentamente: $nombre. Teléfono: $phone";
-
-$send = mail($destinatario, $tipo_tramite, $mensajecompleto, $header);
-
-echo "<script>alert('Mensaje Enviado Exitosamente')</script>";
-echo "<script>setTimeout(\"location.href='contact.html'\", 1000)</script>";
+if(isset($_POST['enviar'])) {
+  if(!empty($_POST['name'])&& !empty($_POST['asunto]) && !empty($_POST['msg']) && !empty($_POST['email'])){
+  $name= $_POST['name'];
+  $asunto= $_POST['asunto'];
+  $msg= $_POST['msg'];
+  $email= $_POST['email'];
+  
+  $header ="From: noreply@example.com"."\r\n";
+  $header. ="Reply-To: noreply@example.com"."\r\n";
+  $header ="X-Mailer: PHP/".phpversion();
+  $mail= @mail($email, $asunto, $msg, $header);
+  
+  if($mail){
+    echo "<h4>Mensaje Enviado Exitosamente!<h4>";
+  }
+  }
+}
 
 ?>
