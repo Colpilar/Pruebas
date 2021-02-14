@@ -4026,6 +4026,59 @@ a.link-style3 {
   padding:0.6em 0.8em;
   background-color:rgb(26, 188, 156);
   color:white;
+	
+	
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    transition: all 500ms ease; 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center; 
+}
+
+.contenido{
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: #fff;
+    transition: all 500ms ease;  
+    position: relative;
+    transform: translateY(-30%);
+}
+#cerrar{
+    display: none;
+}
+
+.contenido h2{
+    padding: 7px;
+    background: #eea412;
+    color: #fff;
+}
+
+.contenido label{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contenido p{
+    padding: 5px;
+}
+
+#cerrar:checked ~ .modal{
+    opacity: 0;
+    visibility: hidden;
+}
+	
 
 
 
